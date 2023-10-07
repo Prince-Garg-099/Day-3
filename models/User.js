@@ -1,9 +1,11 @@
-const { Sequelize, DataTypes, UUIDV4 } = require('sequelize');
+const { DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('task-3', 'root', null, {
-    host: 'localhost',
-    dialect: 'mysql'
-});
+const sequelize = require("../dbconnection.js");
+
+// const sequelize = new Sequelize('task-3', 'root', null, {
+//     host: 'localhost',
+//     dialect: 'mysql'
+// });
 
 
 
@@ -15,13 +17,7 @@ sequelize.authenticate().then(() => {
 
 const User = sequelize.define('users', {
 
-    id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        allowNull: false,
-        primaryKey: true
-    },
-
+    
     email: {
         type: DataTypes.STRING,
         allowNull: false,

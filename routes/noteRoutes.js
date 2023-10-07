@@ -11,6 +11,7 @@ router.post('/', authenticateToken, authorizeRole('admin'), noteController.creat
 //  user and admin role can only Get all notes (GET)
 router.get('/', authenticateToken, noteController.getAllNotes);
 
+
 // Delete a note by id only by admin (DELETE)
 router.delete('/:id', authenticateToken, authorizeRole('admin'), noteController.deleteNote);
 
